@@ -18,6 +18,12 @@ jobs:
       contents: read
       packages: write
     steps:
+
+      - name: Debug Secrets
+        run: |
+          echo "Username is: ${{ secrets.DOCKERHUB_USERNAME }}"
+          echo "Token length: ${{ secrets.DOCKERHUB_TOKEN != '' }}"
+          
       - name: Checkout code
         uses: actions/checkout@v4
 
