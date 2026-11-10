@@ -44,3 +44,16 @@ jobs:
         with:
           name: coverage-report
           path: coverage.out
+
+      - name: Notify Telegram
+        if: always()
+        uses: appleboy/telegram-action@v1.1.0
+        with:
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            Build Status: ${{ job.status }}
+            Repository: ${{ github.repository }}
+            Branch: ${{ github.ref_name }}
+            Commit: ${{ github.sha }}
+            Details: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
