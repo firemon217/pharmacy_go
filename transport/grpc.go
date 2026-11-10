@@ -12,7 +12,6 @@ import (
 	"pharmacy/pb"
 )
 
-// GRPCServer адаптирует protobuf-интерфейс к Go kit endpoints.
 type GRPCServer struct {
 	pb.UnimplementedPharmacyServer
 	create  kitgrpc.Handler

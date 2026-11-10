@@ -8,7 +8,6 @@ import (
 	"pharmacy/medicine"
 )
 
-// Memory хранит лекарства в оперативной памяти.
 type Memory struct {
 	mu        sync.RWMutex
 	medicines map[string]medicine.Medicine
