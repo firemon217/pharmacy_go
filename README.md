@@ -36,3 +36,6 @@ grpcurl -plaintext -import-path . -proto proto/pharmacy.proto \
 grpcurl -plaintext -import-path . -proto proto/pharmacy.proto \
   -d '{"id":"ID","count":3}' localhost:9090 pharmacy.v1.Pharmacy/Sell
 ```
+
+![CI](https://github.com/<username>/orderservice/actions/workflows/ci.yml/badge.svg)
+![Docker](https://github.com/<username>/orderservice/actions/workflows/docker.yml/badge.svg)
